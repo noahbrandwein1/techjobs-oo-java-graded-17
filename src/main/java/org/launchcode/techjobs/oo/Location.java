@@ -21,6 +21,11 @@ public class Location extends JobField {
         this.value = value;
     }
 
+    public Location(int id, String value) {
+        this.id = id;
+        this.value = value;
+    }
+
     // Custom toString, equals, and hashCode methods:
 
     @Override

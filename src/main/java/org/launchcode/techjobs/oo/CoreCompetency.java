@@ -50,7 +50,9 @@ public class CoreCompetency extends JobField {
         this.value = value;
     }
 
+    // Getter for 'id' field
     public int getId() {
         return id;
     }
 }
+
