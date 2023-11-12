@@ -42,15 +42,17 @@ public class CoreCompetency extends JobField {
     //  ONLY a getter for the 'id' field.
 
 
+    @Override
     public String getValue() {
         return value;
     }
 
+    @Override
     public void setValue(String value) {
         this.value = value;
     }
 
-    // Getter for 'id' field
+    @Override
     public int getId() {
         return id;
     }
