@@ -5,6 +5,7 @@ import org.junit.Before;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotEquals;
 
 
 public class JobTest {
@@ -19,6 +20,7 @@ public class JobTest {
 
         job2 = new Job("Software Developer", new Employer("XYZ Inc"), new Location("San Francisco"), new PositionType("Full Time"), new CoreCompetency("Java"));
     }
+
 
     @Test
     public void testJobConstructorSetsAllFields() {
@@ -51,6 +53,13 @@ public class JobTest {
         assertTrue(job1ToString.contains("Location: " + job1.getLocation()));
         assertTrue(job1ToString.contains("Position Type: " + job1.getPositionType()));
         assertTrue(job1ToString.contains("Core Competency: " + job1.getCoreCompetency()));
+    }
+
+    @Test
+    public void testSettingJobId() {
+        Job job1 = new Job();
+        Job job2 = new Job();
+        assertNotEquals(job1.getId(), job2.getId());
     }
 
 }
