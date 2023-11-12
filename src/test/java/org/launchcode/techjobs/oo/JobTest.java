@@ -56,6 +56,12 @@ public class JobTest {
     }
 
     @Test
+    public void testToStringHandlesEmptyField() {
+        String jobToString = job1.toString();
+        assertTrue(jobToString.startsWith(System.lineSeparator()));
+        assertTrue(jobToString.endsWith(System.lineSeparator()));
+    }
+    @Test
     public void testSettingJobId() {
         Job job1 = new Job();
         Job job2 = new Job();
