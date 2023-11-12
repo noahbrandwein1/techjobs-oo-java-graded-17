@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-
+import static org.junit.Assert.assertTrue;
 
 
 public class JobTest {
@@ -33,4 +33,24 @@ public class JobTest {
     public void testJobsForEquality() {
         assertFalse(job1.equals(job2));
     }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        String job1ToString = job1.toString();
+        assertTrue(job1ToString.startsWith("\n"));
+        assertTrue(job1ToString.endsWith("\n"));
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        String job1ToString = job1.toString();
+
+        assertTrue(job1ToString.contains("ID: " + job1.getId()));
+        assertTrue(job1ToString.contains("Name: " + job1.getName()));
+        assertTrue(job1ToString.contains("Employer: " + job1.getEmployer()));
+        assertTrue(job1ToString.contains("Location: " + job1.getLocation()));
+        assertTrue(job1ToString.contains("Position Type: " + job1.getPositionType()));
+        assertTrue(job1ToString.contains("Core Competency: " + job1.getCoreCompetency()));
+    }
+
 }
